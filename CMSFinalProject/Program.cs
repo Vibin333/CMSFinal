@@ -8,6 +8,10 @@ namespace CMSFinalProject
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<Repositories.ILoginRepo, Repositories.LoginRepoImpl>();
+            builder.Services.AddScoped<Services.ILoginService, Services.LoginServiceImpl>();
+            builder.Services.AddScoped<Repositories.IPatientRepo, Repositories.PatientRepoImpl>();
+            builder.Services.AddScoped<Services.IPatient, Services.PatientServiceImpl>();
 
             var app = builder.Build();
 
