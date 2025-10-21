@@ -45,7 +45,7 @@ namespace CMSFinalProject.Controllers
                 case 1: // Admin
                     return RedirectToAction("Index", "Patients");
                 case 2: // Doctor
-                    return RedirectToAction("Index", "Doctors");
+                    return RedirectToAction("Index", "Admins");
                 case 3: // Nurse
                     return RedirectToAction("Index", "Pharmacists");
                 case 4: // Patient

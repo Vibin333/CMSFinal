@@ -1,13 +1,27 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CMSFinalProject.Models;
+using CMSFinalProject.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMSFinalProject.Controllers
 {
     public class DoctorsController : Controller
     {
+        private readonly IDoctorService _doctorService;
+        public DoctorsController(IDoctorService doctorService)
+        {
+            _doctorService = doctorService;
+        }
+
         // GET: DoctorsController
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult List()
+        {
+            List<Patient> patients = _doctorService.GetAllPatients();
             return View();
         }
 

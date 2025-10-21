@@ -1,3 +1,5 @@
+using CMSFinalProject.Services;
+
 namespace CMSFinalProject
 {
     public class Program
@@ -12,6 +14,9 @@ namespace CMSFinalProject
             builder.Services.AddScoped<Services.ILoginService, Services.LoginServiceImpl>();
             builder.Services.AddScoped<Repositories.IPatientRepo, Repositories.PatientRepoImpl>();
             builder.Services.AddScoped<Services.IPatient, Services.PatientServiceImpl>();
+            builder.Services.AddScoped<IAdminService, AdminServiceImpl>();
+            builder.Services.AddScoped<Repositories.IAdminRepo, Repositories.AdminRepoImpl>();
+
 
             var app = builder.Build();
 
